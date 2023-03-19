@@ -16,12 +16,12 @@ export const view = (req, res) => {
         if (error) throw error;
 
         //used to send delete status
-        // remove = req.params.delete;
+       let remove = req.query.delete;
         // console.log(results.length)
         if (results.length == 0)
-            res.render("home", { results, message: true })
+            res.render("home", { results, message: true, remove })
         else
-            res.render("home", { results, message: false })
+            res.render("home", { results, message: false, remove })
 
 
     });
