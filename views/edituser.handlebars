@@ -1,0 +1,22 @@
+{{#if message}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+
+<div class="mx-auto w-50 row mt-3 bg-success text-white text-center">
+
+    <h1>Edit your details</h1>
+
+
+</div>
+<div class="container mt-2">
+
+    {{#each results}}
+    <form action="/edituser/{{this.id}}" method="post" class="w-50 mx-auto   ">
+        {{>userform}}
+    </form>
+    {{/each}}
+</div>

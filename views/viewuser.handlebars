@@ -1,0 +1,49 @@
+<div class="container mt-2">
+
+    {{#each results}}
+    <div class="mx-auto w-50 row mt-3 bg-success text-white text-center">
+
+        <h1>Details of {{first_name}} {{this.last_name}}</h1>
+
+
+    </div>
+    <table class="w-50  table table-dark table-bordered mb-5 table-striped mx-auto">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="text-center">#</th>
+                <th scope="col" class="text-center">First Name</th>
+                <th scope="col" class="text-center">Last Name</th>
+                <th scope="col" class="text-center">Email</th>
+                <th scope="col" class="text-center">Phone</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{ @index}}</th>
+                <td>{{this.first_name}}</td>
+                <td>{{this.last_name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.phone}}</td>
+
+            </tr>
+            <tr>
+                <th scope="col" class="text-center col-6">Comments</th>
+                <td colspan="4">
+
+                    <div class="col-6">{{this.comments}}</div>
+                </td>
+            </tr>
+
+
+
+        </tbody>
+    </table>
+    <div class="text-center d-flex justify-content-around">
+
+        <a type="button" class=" btn btn-dark btn-lg " href="/">Back</a>
+        <a type="button" class=" btn btn-primary btn-lg " href=" /edituser/{{this.id}}">Edit</a>
+    </div>
+
+    {{/each}}
+</div>

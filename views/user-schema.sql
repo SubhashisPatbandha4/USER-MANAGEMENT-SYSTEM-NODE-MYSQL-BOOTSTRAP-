@@ -1,0 +1,1 @@
+CREATE TABLE `usermanagement-nodemysql`.`user` ( `id` INT NOT NULL AUTO_INCREMENT , `first_name` VARCHAR NOT NULL , `last_name` VARCHAR NOT NULL , `email` VARCHAR NOT NULL , `phone` INT NOT NULL , `comments` TEXT NOT NULL , `status` VARCHAR NOT NULL DEFAULT 'active' , PRIMARY KEY (`id`)) ENGINE = InnoDB;

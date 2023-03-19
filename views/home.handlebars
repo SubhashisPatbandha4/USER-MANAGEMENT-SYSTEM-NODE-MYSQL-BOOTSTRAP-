@@ -1,0 +1,56 @@
+{{#if remove}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  User deleted successfully
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+
+<div class="mx-auto row mt-3 bg-success text-white text-center">
+
+  <h1> Users Details</h1>
+
+
+</div>
+
+
+{{#if message}}
+<div class="alert alert-dark" role="alert">
+  No user details available
+</div>
+
+{{else}}
+<table class="table table-dark table-bordered mb-5 table-striped mx-auto">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col" class="text-center">#</th>
+      <th scope="col" class="text-center">First Name</th>
+      <th scope="col" class="text-center">Last Name</th>
+      <th scope="col" class="text-center">Email</th>
+      <th scope="col" class="text-center">Phone</th>
+      <th scope="col" class="text-center">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each results}}
+
+    <tr>
+
+      <th scope="row">{{ @index}}</th>
+      <td>{{this.first_name}}</td>
+      <td>{{this.last_name}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.phone}}</td>
+      <td class="text-center">
+        <a href="/viewuser/{{this.id}}" type="button" class="btn btn-secondary btn-small"><i
+            class="bi bi-eye"></i>view</a>
+        <a href="edituser/{{this.id}}" type="button" class="btn btn-success btn-small"><i
+            class="bi bi-pencil"></i>edit</a>
+        <a href="/{{this.id}}" type="button" class="btn btn-danger btn-small"><i class="bi bi-trash"></i>delete</a>
+      </td>
+    </tr>
+    {{/each}}
+    {{/if}}
+  </tbody>
+</table>
